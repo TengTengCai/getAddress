@@ -1,11 +1,11 @@
-from flask import Flask, request
+from flask import Flask, request, render_template
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='Templates')
 
 
 @app.route('/')
 def hello_world():
-    return 'Hello World!'
+    return render_template('index.html')
 
 
 @app.route('/address', methods=['POST'])
